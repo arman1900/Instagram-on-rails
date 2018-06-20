@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     has_one_attached :avatar
+    has_many :posts
     validates_presence_of :email, :username
     validates_uniqueness_of :email, :username
     validates :password, length: {minimum: 6,maximum: 30}

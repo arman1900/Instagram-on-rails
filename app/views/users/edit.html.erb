@@ -1,5 +1,6 @@
-<%@title="Signup"%>
-<%= form_for(@user, url: signup_path) do |f| %>
+<%@title="Update Profile"%>
+<h1>Update Your Profile</h1>
+<%= form_for(@user) do |f| %>
 
 <% if @user.errors %>
 		<ul>
