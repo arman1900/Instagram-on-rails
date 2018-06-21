@@ -1,21 +1,31 @@
-<ul>
-    <li>
-    <a href="/">Home</a>
-    </li>
-    <li>
-      <a href="/about">About</a>
-    </li>
-    <li>
-      <a href="/contact">Contact</a>
-    </li>
-    <li>
-    <a href="/users">Users</a>
-    </li>
-    <% if signed_in %>
-    <li><%= link_to "logout", logout_path, method: :delete %></li>
-    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-    <% else %>
-    <li><%= link_to "login", login_path %></li>
-     <li><a href="/signup">Signup</a></li>
-    <% end %>
-  </ul>
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <a href="/"><%=image_tag("RofloBaza.png",size:"300x100") %></a>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+              <% if signed_in %>
+              <li><a href="/users">Users</a></li>
+              <li class="dropdown">
+              <li>
+              <a href="#" class="dropbtn">Account <b class="caret"></b></a>
+              <ul class="dropdown-content">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li><%= link_to "logout", logout_path, method: :delete %></li>
+              </ul>
+              </li>
+              <% else %>
+              <li><%= link_to "login", login_path %></li>
+              <li><a href="/signup">Signup</a></li>
+            <% end %>
+          </nav>
+        </ul>
+      </div>
+    </header>

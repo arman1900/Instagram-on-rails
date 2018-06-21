@@ -1,5 +1,14 @@
 <% @title ="Homepage"%>
-<h1>Welcome to Instagram</h1>
+
+
+<div class= "container">
+    <div class= "jambotron">
+        <h1>Welcome to Instagram</h1>
 <% if signed_in %>
 <h2><%= current_user.username%>
+<% else %>
+<%= link_to "Sign in", login_path%>
+<%= link_to "Register", signup_path%>
 <%end%>
+</div>
+</div>
