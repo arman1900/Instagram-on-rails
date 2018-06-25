@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Instagram 
+    <title>Roflobaza
     <%= pretty_title(@title)%>
     </title>
     <%= csrf_meta_tags %>
@@ -13,6 +13,8 @@
 
   <body>
   <%= render "partials/header"%>
+  <div class="container">
+    <%= render "partials/errors"%>
     <%= yield %>
   </body>
 </html>

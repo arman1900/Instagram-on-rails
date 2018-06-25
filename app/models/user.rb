@@ -2,7 +2,8 @@ class User < ApplicationRecord
     has_secure_password
     has_one_attached :avatar
     has_many :posts
-    validates_presence_of :email, :username
+    has_many :likes
+    validates_presence_of :email, :username, :avatar
     validates_uniqueness_of :email, :username
     validates :password, length: {minimum: 6,maximum: 30}
     validates :username, :password, format: { with: /\A[0-9a-zA-Z_.\-]+\Z/, message: "Only alphanumeric characters, and -_."}
