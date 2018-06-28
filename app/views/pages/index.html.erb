@@ -1,6 +1,6 @@
 <% @title ="Homepage"%>
 <div class="container">
-<% if signed_in %>
+<% if signed_in? %>
 <div class="row">
     <div class="col-md-3">
             <% if current_user.avatar.attachment%>
